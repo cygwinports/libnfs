@@ -1,0 +1,32 @@
+NAME="libnfs"
+VERSION=1.11.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="NFS client library"
+DESCRIPTION="LIBNFS is a client library for accessing NFS shares over a network.
+Libnfs uses RFC2224 style URLs extended with some minor libnfs extensions."
+HOMEPAGE="https://github.com/sahlberg/libnfs"
+SRC_URI="https://sites.google.com/site/libnfstarballs/li/libnfs-${VERSION}.tar.gz"
+PATCH_URI="
+	1.11.0-cygwin-unix.patch
+	1.11.0-no-undefined.patch
+"
+
+PKG_NAMES="libnfs8 libnfs-devel libnfs-utils"
+libnfs8_CONTENTS="
+	usr/bin/cygnfs-8.dll
+	usr/share/doc/${NAME}
+"
+libnfs_devel_CONTENTS="
+	usr/include/nfsc/
+	usr/lib/libnfs.dll.a
+	usr/lib/pkgconfig/libnfs.pc
+"
+libnfs_utils_CATEGORY="Net"
+libnfs_utils_SUMMARY="NFS client utilities"
+libnfs_utils_CONTENTS="
+	usr/bin/nfs-*
+	usr/share/man/man1/nfs-*
+"
+
+DIFF_EXCLUDES="examples"

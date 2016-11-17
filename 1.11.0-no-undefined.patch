@@ -1,0 +1,11 @@
+--- origsrc/libnfs-1.11.0/lib/Makefile.am	2016-10-09 13:23:11.000000000 -0500
++++ src/libnfs-1.11.0/lib/Makefile.am	2016-11-16 18:37:48.310204400 -0600
+@@ -25,7 +25,7 @@ libnfs_la_SOURCES = \
+ SOCURRENT=10
+ SOREVISION=0
+ SOAGE=2
+-libnfs_la_LDFLAGS = -version-info $(SOCURRENT):$(SOREVISION):$(SOAGE)
++libnfs_la_LDFLAGS = -version-info $(SOCURRENT):$(SOREVISION):$(SOAGE) -no-undefined
+ libnfs_la_LIBADD = \
+ 	../mount/libmount.la \
+ 	../nfs/libnfs.la \

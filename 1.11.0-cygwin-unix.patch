@@ -1,0 +1,11 @@
+--- origsrc/libnfs-1.11.0/configure.ac	2016-10-09 13:23:11.000000000 -0500
++++ src/libnfs-1.11.0/configure.ac	2016-11-16 18:32:20.337642800 -0600
+@@ -123,7 +123,7 @@ case $host in
+     AC_CHECK_LIB([socket], [main], , [AC_MSG_ERROR([Can not find required library])])
+     AC_CHECK_LIB([nsl],    [main], , [AC_MSG_ERROR([Can not find required library])])
+     ;;
+-  *mingw32* | *cygwin* | *wince* | *mingwce*)
++  *mingw32* | *wince* | *mingwce*)
+     LIBSOCKET='-lws2_32'
+     SYS=mingw32
+     ;;
